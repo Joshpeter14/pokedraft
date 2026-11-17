@@ -2,7 +2,9 @@ import axios from 'axios'
 import { dummyRosters, dummyTeams } from './dummyData'
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL ?? 'http://localhost:3000',
+  // Kosong = alamat yang sama dengan halaman (Vercel: /api/* ditangani function; dev: proxy Vite ke port 3000).
+  // Isi VITE_API_URL hanya jika API di-host di alamat lain.
+  baseURL: import.meta.env.VITE_API_URL ?? '',
   timeout: 8000,
   headers: { Accept: 'application/json' },
 })
