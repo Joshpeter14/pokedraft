@@ -2,7 +2,7 @@
 // Jalankan setelah sql/04_moves_schema.sql: npm run seed:moves
 // Aman diulang: memakai upsert, dan roster_moves dibuat ulang per roster.
 import { readFileSync } from 'node:fs'
-import { supabase } from '../supabase.js'
+import { supabase } from '../config/supabaseClient.js'
 
 const data = JSON.parse(readFileSync(new URL('../data/moves.json', import.meta.url)))
 

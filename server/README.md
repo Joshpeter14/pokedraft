@@ -1,4 +1,6 @@
-﻿# PokeDraft API
+# PokeDraft API
+
+Struktur (mengikuti Modul 1): `config/` (klien Supabase), `models/` (akses database), `controllers/` (logika request/response), `routes/` (pemetaan URL), `utils/` (validasi).
 
 Express + Supabase.
 
