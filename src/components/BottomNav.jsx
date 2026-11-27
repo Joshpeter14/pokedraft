@@ -1,11 +1,11 @@
 import { NavLink } from 'react-router-dom'
-import { LayoutGrid, Swords, User } from 'lucide-react'
+import { LayoutGrid, Trophy, User } from 'lucide-react'
 import PokeballIcon from './PokeballIcon'
 
 const items = [
   { to: '/roster', label: 'Pokedex', Icon: PokeballIcon },
   { to: '/team', label: 'Tim', Icon: LayoutGrid },
-  { to: '/battle', label: 'Battle', Icon: Swords },
+  { to: '/battle', label: 'Arena', Icon: Trophy },
   { to: '/profile', label: 'Profil', Icon: User },
 ]
 

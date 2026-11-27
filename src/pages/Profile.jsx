@@ -1,12 +1,17 @@
+import { useState } from 'react'
+import { Info } from 'lucide-react'
 import PageHeader from '../components/PageHeader'
 
 const developer = {
   name: 'Josh Peter Sirait',
   nim: '21120124140155',
   photo: '/profile.webp',
+  title: 'PokeDraft: Progressive Web App Panduan Roster dan Tim Pokémon Champions',
 }
 
 export default function Profile() {
+  const [open, setOpen] = useState(false)
+
   return (
     <>
       <PageHeader title="Profil" />
@@ -38,7 +43,38 @@ export default function Profile() {
             </div>
           </div>
         </section>
+
+        <button onClick={() => setOpen(true)} className="btn btn-primary w-full">
+          <Info size={18} strokeWidth={1.5} aria-hidden="true" />
+          Info Tugas Akhir
+        </button>
       </main>
+
+      {open && (
+        <div
+          className="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="ta-title"
+            className="card w-full max-w-sm p-5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 id="ta-title" className="font-medium">
+              Tugas Akhir PPB
+            </h2>
+            <p className="mt-3 text-xs text-muted">NIM</p>
+            <p className="num text-fg2">{developer.nim}</p>
+            <p className="mt-3 text-xs text-muted">Judul</p>
+            <p className="leading-relaxed text-fg2">{developer.title}</p>
+            <button onClick={() => setOpen(false)} className="btn btn-primary mt-5 w-full">
+              Tutup
+            </button>
+          </div>
+        </div>
+      )}
     </>
   )
 }
